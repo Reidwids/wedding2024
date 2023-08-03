@@ -23,9 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="en">
 			<head>
-				<link rel="shortcut icon" href="/cropped-proteus-logo.png" />
+				<link rel="shortcut icon" href="/heart.png" />
 			</head>
-			<body className={`${parisienne.variable} ${libreBaskerville.variable} relative`}>
+			<body className={`${parisienne.variable} ${libreBaskerville.variable} relative min-h-[100vh]`}>
 				<Header />
 				<div className="min-w-full flex justify-center">{children}</div>
 				<Footer />
