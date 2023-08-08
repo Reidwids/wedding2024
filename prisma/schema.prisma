@@ -8,10 +8,12 @@ datasource db {
 }
 
 model Guest {
-  id    String @unique
-  name  String
-  email String
-  group Group? @relation(fields: [id], references: [id])
+  email    String    @unique
+  name     String
+  rsvp     Boolean   @default(false)
+  rspvDate DateTime?
+  group    Group?    @relation(fields: [groupId], references: [id])
+  groupId  String?
 }
 
 model Group {

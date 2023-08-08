@@ -1,9 +1,10 @@
+import prisma from "@/app/lib/prisma";
 import { isValidBody } from "@/app/utils/utils";
-import prisma from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
-	return await prisma.guest.findMany();
+	const guests = await prisma.guest.findMany();
+	return new NextResponse(JSON.stringify(guests), { status: 200 });
 }
 
 type CreateGuestReq = {
@@ -27,7 +28,7 @@ export async function POST(req: NextRequest) {
 	if (req.body.groupId) {
 		data["group"] = {
 			connect: {
-				id: req.body.groupId,
+				email: req.body.groupId,
 			},
 		};
 	}

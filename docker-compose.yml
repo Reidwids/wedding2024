@@ -9,8 +9,14 @@ services:
     container_name: wedding-db
     image: postgres:latest
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: wedding-db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: wedding-db
+      DB_HOST: localhost
+      INTERNAL_DB_PORT: 5434
+      NODE_ENV: development
     ports: 
       - 5434:5432
+  # volumes:
+  #   # Bind mount local directory to dev, ignoring node modules 
+  #     - ./:./app
