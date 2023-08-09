@@ -7,7 +7,7 @@ const createTransporter = async () => {
 	return createTransport({
 		port: 587,
 		host: "smtp.gmail.com",
-		secure: true,
+		secure: false,
 		auth: {
 			user: "reidwids@gmail.com",
 			pass: process.env.GMAIL_APP_PASSWORD,
