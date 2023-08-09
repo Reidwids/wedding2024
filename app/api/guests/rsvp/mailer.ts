@@ -5,9 +5,8 @@ import { NextResponse } from "next/server";
 
 const createTransporter = async () => {
 	return createTransport({
-		port: 587,
+		port: 465,
 		host: "smtp.gmail.com",
-		secure: false,
 		auth: {
 			user: "reidwids@gmail.com",
 			pass: process.env.GMAIL_APP_PASSWORD,
