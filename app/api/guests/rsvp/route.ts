@@ -2,11 +2,11 @@ import prisma from "@/app/lib/prisma";
 import { isValidBody } from "@/app/utils/utils";
 import { NextRequest, NextResponse } from "next/server";
 
+// Get all guests connected to an email within a group
 export type GuestsRSVPReq = {
 	emails: string[];
 };
 
-// Get all guests connected to an email within a group
 export async function PUT(req: NextRequest) {
 	if (!isValidBody(req.body, ["emails"])) {
 		return new NextResponse(JSON.stringify({ name: "Invalid body" }), { status: 400 });
