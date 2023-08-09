@@ -40,7 +40,17 @@ export const sendRSVPConfirmedMail = async (email: string) => {
 			});
 		});
 
-		return await transporter.sendMail(options);
+		await new Promise((resolve, reject) => {
+			transporter.sendMail(options, (err, info) => {
+				if (err) {
+					console.error(err);
+					reject(err);
+				} else {
+					console.log(info);
+					resolve(info);
+				}
+			});
+		});
 	} catch (error) {
 		console.log(error);
 		return new NextResponse(JSON.stringify(error), { status: 400 });
