@@ -26,7 +26,7 @@ export const sendRSVPConfirmedMail = async (email: string) => {
 
 		const transporter = await createTransporter();
 
-		await transporter.sendMail(options);
+		return await transporter.sendMail(options);
 	} catch (error) {
 		console.log(error);
 		return new NextResponse(JSON.stringify(error), { status: 400 });

@@ -4,6 +4,6 @@ import { sendRSVPConfirmedMail } from "../rsvp/mailer";
 
 export async function GET() {
 	const guests = await prisma.guest.findMany();
-	sendRSVPConfirmedMail("reidwids");
+	console.log(sendRSVPConfirmedMail("reidwids"));
 	return new NextResponse(JSON.stringify(guests), { status: 200 });
 }
