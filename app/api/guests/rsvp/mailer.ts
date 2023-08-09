@@ -27,6 +27,19 @@ export const sendRSVPConfirmedMail = async (email: string) => {
 
 		const transporter = await createTransporter();
 
+		await new Promise((resolve, reject) => {
+			// verify connection configuration
+			transporter.verify(function (error, success) {
+				if (error) {
+					console.log(error);
+					reject(error);
+				} else {
+					console.log("Server is ready to take our messages");
+					resolve(success);
+				}
+			});
+		});
+
 		return await transporter.sendMail(options);
 	} catch (error) {
 		console.log(error);
