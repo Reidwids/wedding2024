@@ -1,5 +1,5 @@
 import { render } from "@react-email/render";
-import RsvpMail from "../../../emails/RsvpMail";
+import RsvpMail from "./RsvpMail";
 import sendgrid from "@sendgrid/mail";
 
 export const sendRSVPConfirmedMail = async (email: string) => {
