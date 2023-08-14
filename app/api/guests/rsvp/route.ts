@@ -1,50 +1,54 @@
+import { sendRsvpNotification } from "@/emails/mailer";
 import prisma from "@/app/lib/prisma";
 import { isValidBody } from "@/app/utils/utils";
+import { Guest } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
 // Get all guests connected to an email within a group
 export type GuestsRSVPReq = {
-	emails: string[];
+	guests: Guest[];
 };
 
 export async function PUT(req: NextRequest) {
-	if (!isValidBody(req.body, ["emails"])) {
+	if (!isValidBody(req.body, ["guests"])) {
 		return new NextResponse(JSON.stringify({ name: "Invalid body" }), { status: 400 });
 	}
 
-	const { emails }: GuestsRSVPReq = await req.json();
+	const { guests }: GuestsRSVPReq = await req.json();
 
 	try {
-		const guests = await prisma.guest.findMany({
+		const reqGuests = await prisma.guest.findMany({
 			where: {
 				email: {
-					in: emails,
+					in: guests.map((guest) => guest.email),
 				},
 			},
 		});
 
 		// Make sure all emails exist
-		if (guests.length !== emails.length) {
-			return new NextResponse(JSON.stringify({ message: "Provided email does not exist" }), { status: 400 });
+		if (reqGuests.length !== guests.length) {
+			return new NextResponse(JSON.stringify({ message: "Provided guest does not exist" }), { status: 400 });
 		}
 
 		// Make sure all guest groups are the same
-		const groupIds = guests.map((guest) => guest.groupId);
+		const groupIds = reqGuests.map((guest) => guest.groupId);
 		if (new Set(groupIds).size !== 1) {
 			return new NextResponse(JSON.stringify({ message: "Guests are not in the same group" }), { status: 400 });
 		}
 
-		await prisma.guest.updateMany({
-			where: {
-				email: {
-					in: emails,
+		for (const guest of guests) {
+			await prisma.guest.update({
+				where: {
+					email: guest.email,
 				},
-			},
-			data: {
-				rsvp: true,
-				rspvDate: new Date(),
-			},
-		});
+				data: {
+					rsvp: guest.rsvp,
+					rspvDate: new Date(),
+				},
+			});
+		}
+		await sendRsvpNotification(guests);
+
 		return new NextResponse(JSON.stringify({ message: "Guests RSVP'd" }), { status: 200 });
 	} catch (error) {
 		console.log(error);

@@ -8,11 +8,12 @@
 		"start": "next start",
 		"lint": "next lint",
 		"postinstall": "prisma generate",
-		"preview-email": "email dev"
+		"email": "email dev"
 	},
 	"dependencies": {
 		"@prisma/client": "^5.1.1",
 		"@react-email/components": "^0.0.7",
+		"@react-email/preview": "0.0.6",
 		"@react-email/render": "^0.0.7",
 		"@sendgrid/mail": "^7.7.0",
 		"@types/node": "20.4.6",

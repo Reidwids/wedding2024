@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Parisienne, Lora } from "next/font/google";
+import { Parisienne, Lora, Libre_Baskerville } from "next/font/google";
 // Parisienne and Libre Baskerville
 // Parisienne and Lora
 // Sacramento and Montserrat
@@ -20,6 +20,13 @@ const parisienne = Parisienne({
 	variable: "--font-parisienne",
 });
 
+const libreBaskerville = Libre_Baskerville({
+	weight: ["400"],
+	style: ["normal"],
+	subsets: ["latin"],
+	variable: "--font-libreBaskerville",
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
@@ -27,9 +34,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<link rel="shortcut icon" href="/heart.png" />
 				<title>Natasha & Derek</title>
 			</head>
-			<body className={`${parisienne.variable} ${lora.variable} relative min-h-[100vh]`}>
+			<body className={`${parisienne.variable} ${lora.variable} relative`}>
 				<Header />
-				<div className="min-w-full flex justify-center">{children}</div>
+				<div className="min-w-full flex justify-center min-h-[calc(100vh-160px)]">{children}</div>
 				<Footer />
 			</body>
 		</html>

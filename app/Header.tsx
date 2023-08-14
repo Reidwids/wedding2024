@@ -35,7 +35,7 @@ export default function Header() {
 	return (
 		<div className={"w-full flex flex-col items-center justify-center relative mt-5 md:mt-10"}>
 			<div className="font-parisienne text-4xl md:text-[72px]">Natasha & Derek</div>
-			<div className=" hidden px-6 mt-8 max-w-4xl w-full md:flex justify-between font-libreBaskerville text-[16px]">
+			<div className=" hidden px-6 mt-8 max-w-4xl w-full md:flex justify-between font-lora text-[16px]">
 				{routes.map((route) => (
 					<Link href={route.href} className="group relative" key={route.name}>
 						<div>{route.name}</div>
@@ -48,7 +48,7 @@ export default function Header() {
 				<Xmark isOpen={isOpen} w="11px" fill="black" />
 			</div>
 			{isOpen && (
-				<div className="md:hidden absolute w-full top-12 flex flex-col bg-[#ffffffee] z-50 shadow-md ">
+				<div className="md:hidden absolute w-full top-10 flex flex-col bg-[#ffffffee] z-50 shadow-md ">
 					{routes.map((route, i) => (
 						<div key={route.name + i}>
 							<Link
