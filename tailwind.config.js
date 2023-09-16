@@ -8,6 +8,7 @@ module.exports = {
 			},
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+				"cover-photo": "url('/coverPhoto3.jpg')",
 				"gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 			},
 			boxShadow: {
@@ -16,6 +17,10 @@ module.exports = {
 			fontFamily: {
 				parisienne: ["var(--font-parisienne)", "serif"],
 				lora: ["var(--font-lora)", "serif"],
+			},
+			rotate: {
+				23: "23deg",
+				60: "60deg",
 			},
 		},
 	},
