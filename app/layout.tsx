@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Parisienne, Lora, Libre_Barcode_39, Bodoni_Moda } from "next/font/google";
+import { Parisienne, Lora, Libre_Barcode_39 } from "next/font/google";
 import localFont from "next/font/local";
 // Parisienne and Libre Baskerville
 // Parisienne and Lora
@@ -48,11 +48,15 @@ const motherland = localFont({
 	],
 });
 
-const bodoni = Bodoni_Moda({
-	weight: ["400", "800"],
-	style: ["normal", "italic"],
-	subsets: ["latin"],
+const bodoni = localFont({
 	variable: "--font-bodoni",
+	src: [
+		{
+			path: "../public/fonts/bodoni-moda/bodoni-moda.ttf",
+			weight: "400",
+			style: "normal",
+		},
+	],
 });
 
 const parisienne = Parisienne({
