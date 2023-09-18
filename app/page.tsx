@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CoverPhoto from "@/public/coverPhoto3.jpg";
+import CoverPhoto from "@/public/CoverPhoto3.jpg";
 import PlaneTrail from "@/public/plane-trail.svg";
 import PlaneTrail2 from "@/public/plane-trail2.svg";
 import Barcode from "@/public/barcode.png";
