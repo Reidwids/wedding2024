@@ -71,14 +71,15 @@ const libreBarcode = Libre_Barcode_39({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html
+			lang="en"
+			className={`${roseritta.variable} ${motherland.variable} ${bodoni.variable} ${classy.variable} ${libreBarcode.variable} ${parisienne.variable} ${lora.variable}`}
+		>
 			<head>
 				<link rel="shortcut icon" href="/heart.png" />
 				<title>Natasha & Derek</title>
 			</head>
-			<body
-				className={`${roseritta.variable} ${motherland.variable} ${bodoni.variable} ${classy.variable} ${libreBarcode.variable} ${parisienne.variable} ${lora.variable} relative`}
-			>
+			<body className={`relative`}>
 				<Header />
 				<div className="min-w-full flex justify-center min-h-[calc(100vh-160px)]">{children}</div>
 				<Footer />
