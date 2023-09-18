@@ -8,22 +8,45 @@ import Spacer from "./components/Spacer";
 
 export default function Home() {
 	return (
-		<main className="mt-5 flex flex-col w-full mb-10 items-center">
+		<main className="flex flex-col w-full mb-10 items-center relative">
 			<Image
 				alt="Cover Photo"
 				src={CoverPhoto}
 				priority={true}
 				style={{
-					boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
+					// boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
 					objectFit: "cover",
-					objectPosition: "50% 90%",
-					height: "600px",
+					objectPosition: "37% 90%",
 				}}
+				className="h-[550px] md:h-[800px] absolute -top-20 -z-10"
 			/>
-			<div className="w-full flex justify-center">
+			{/* <div className="absolute text-sm top-5 left-5 w-full flex flex-row justify-start font-bodoni space-x-8">
+				<div className=" font-motherland text-2xl mr-5">Natasha & Derek</div>
+				<div>RSVP</div>
+				<div>Photos</div>
+				<div>Events</div>
+				<div>Travel</div>
+				<div>FAQ</div>
+			</div> */}
+			{/* <div
+				className="font-lora absolute text-left w-full text-white md:text-black bg-[#00000077] md:bg-transparent p-5"
+				style={{ letterSpacing: "2px" }}
+			>
+				<div className="font-roseritta text-[40px] md:text-[70px] flex flex-row ">
+					<div>SAVE</div>&nbsp;<div className="font-motherland text-[70px] -rotate-12 mt-14">the</div>&nbsp;
+					<div className="mt-20">Date</div>
+				</div>
+				<div className="text-2xl mt-10">RIVIERIA MAYA, MEXICO</div>
+				<div className="text-md md:text-lg mt-5">
+					<div>NOVEMBER 20 - 26 2024</div>
+					<div>CEREMONY NOV 23</div>
+				</div>
+			</div> */}
+
+			{/* <div className="w-full flex justify-center">
 				<Image alt="Text Divider" src="/textDividerDainty.svg" className="w-60 md:w-80 my-12" width={200} height={100} />
-			</div>
-			<div
+			</div> */}
+			{/* <div
 				className="flex flex-row border-[1px] border-[#efefef] rounded-xl mx-5"
 				style={{
 					boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
@@ -72,7 +95,7 @@ export default function Home() {
 						<div className="rotate-90 origin-left left-3 -top-6 absolute">DN202024</div>
 					</div>
 				</div>
-			</div>
+			</div> */}
 		</main>
 	);
 }

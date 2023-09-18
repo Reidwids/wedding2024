@@ -17,7 +17,11 @@ module.exports = {
 			fontFamily: {
 				parisienne: ["var(--font-parisienne)", "serif"],
 				lora: ["var(--font-lora)", "serif"],
+				classy: ["var(--font-classy)", "serif"],
+				bodoni: ["var(--font-bodoni)", "serif"],
+				motherland: ["var(--font-motherland)", "serif"],
 				libreBarcode: ["var(--font-libreBarcode)", "serif"],
+				roseritta: ["var(--font-roseritta)", "serif"],
 			},
 			rotate: {
 				23: "23deg",

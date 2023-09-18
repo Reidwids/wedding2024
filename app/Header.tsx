@@ -1,22 +1,18 @@
 "use client";
-import { Hamburger, Xmark } from "@/public/svgs";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Hamburger from "./components/Hamburger";
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 	const routes = [
 		{
-			name: "Home",
-			href: "/",
+			name: "Photos",
+			href: "/photos",
 		},
 		{
 			name: "RSVP",
 			href: "/rsvp",
-		},
-		{
-			name: "Photos",
-			href: "/photos",
 		},
 		{
 			name: "Events",
@@ -33,36 +29,43 @@ export default function Header() {
 	];
 
 	return (
-		<div className={"w-full flex flex-col items-center justify-center relative mt-5 md:mt-10"}>
-			<div className="font-parisienne text-4xl md:text-[72px]">Natasha & Derek</div>
-			<div className=" hidden px-6 mt-8 max-w-4xl w-full md:flex justify-between font-lora text-[16px]">
+		<div className={"w-full flex flex-row items-center justify-center relative md:ml-6 py-6 md:py-5 "}>
+			<Hamburger onClick={() => setIsOpen(!isOpen)} style={{ position: "absolute", left: 20, top: 25 }} />
+			<Link className="font-motherland text-[20px] md:text-3xl md:mr-12 cursor-pointer whitespace-nowrap" href={"/"}>
+				Natasha & Derek
+			</Link>
+			<div className=" hidden w-full md:flex font-bodoni text-[16px] space-x-8">
 				{routes.map((route) => (
-					<Link href={route.href} className="group relative" key={route.name}>
+					<Link href={route.href} className="group relative  transition-all" key={route.name}>
 						<div>{route.name}</div>
 						<div className="absolute bottom-0 left-0 h-[1px] block w-0 group-hover:w-full transition-all duration-500 bg-[#666]"></div>
 					</Link>
 				))}
 			</div>
-			<div className="absolute left-3 top-0 md:hidden cursor-pointer rounded-md p-2" onClick={() => setIsOpen(!isOpen)}>
-				<Hamburger isOpen={isOpen} w="11px" fill="black" />
-				<Xmark isOpen={isOpen} w="11px" fill="black" />
+			<div
+				className="md:hidden absolute w-full top-14 flex flex-col bg-[#ffffffaa] z-50 shadow-md "
+				style={{
+					height: isOpen ? `${routes.length * 41}px` : "0", // Adjust the height based on your content
+					transition: "height 0.5s ease-in-out",
+					overflow: "hidden",
+				}}
+			>
+				{routes.map((route, i) => (
+					<div key={route.name + i}>
+						<Link
+							href={route.href!}
+							className="space-x-4 flex py-2 items-center px-4 transition-all"
+							onClick={() => {
+								document.getElementById("toggle")?.click();
+								setIsOpen(false);
+							}}
+						>
+							{route.name}
+						</Link>
+						{i !== routes.length - 1 && <div className="w-full h-[1px] bg-[#ddd]"></div>}
+					</div>
+				))}
 			</div>
-			{isOpen && (
-				<div className="md:hidden absolute w-full top-10 flex flex-col bg-[#ffffffee] z-50 shadow-md ">
-					{routes.map((route, i) => (
-						<div key={route.name + i}>
-							<Link
-								href={route.href!}
-								className="space-x-4 flex py-2 items-center px-4 transition-all"
-								onClick={() => setIsOpen(!isOpen)}
-							>
-								{route.name}
-							</Link>
-							{i !== routes.length - 1 && <div className="w-full h-[1px] bg-[#ddd]"></div>}
-						</div>
-					))}
-				</div>
-			)}
 		</div>
 	);
 }
