@@ -43,7 +43,7 @@ export default function Header() {
 				))}
 			</div>
 			<div
-				className="md:hidden absolute w-full top-14 flex flex-col bg-[#ffffffaa] z-50 shadow-md "
+				className="md:hidden absolute w-full top-14 flex flex-col bg-[#ffffffee] z-50 shadow-md "
 				style={{
 					height: isOpen ? `${routes.length * 41}px` : "0", // Adjust the height based on your content
 					transition: "height 0.5s ease-in-out",

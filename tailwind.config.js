@@ -27,6 +27,7 @@ module.exports = {
 				23: "23deg",
 				60: "60deg",
 			},
+			objectPosition: { 40: "40% 90%", 50: "50% 90%" },
 		},
 	},
 	plugins: [],
