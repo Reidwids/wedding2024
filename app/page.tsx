@@ -52,11 +52,11 @@ export default function Home() {
 				</div>
 				<div className="font-lora w-full text-center mt-3 relative " style={{ letterSpacing: "2px" }}>
 					<div className="text-2xl md:text-5xl font-motherland">See you in paradise</div>
-					<Image
+					{/* <Image
 						alt="Plane with trail"
 						src={planeTrail}
 						className="w-28 md:w-36 absolute -top-20 -right-10 md:-top-[115px] md:-right-16 -rotate-23 opacity-70"
-					/>
+					/> */}
 				</div>
 			</div>
 
