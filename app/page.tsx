@@ -4,9 +4,9 @@ import planeTrail from "@/public/plane-trail.svg";
 
 export default function Home() {
 	return (
-		<main className="flex flex-col w-full mb-10 items-center relative">
+		<main className="flex flex-col w-full  items-center relative overflow-hidden -mt-[80px]">
 			<div
-				className="w-full relative flex justify-center h-[650px] md:h-[800px] -mt-[80px] -z-10
+				className="w-full relative flex justify-center h-[650px] md:h-[800px] -z-10
 				bg-scroll md:bg-fixed bg-cover bg-custom-pos1 md:bg-bottom bg-no-repeat"
 				style={{
 					backgroundImage: "url('/CoverPhoto3.jpg')",
@@ -50,9 +50,13 @@ export default function Home() {
 					<div className="">Meet Us In Mexico</div>
 					<div className=""></div>
 				</div>
-				<div className="font-lora w-full text-center mt-3" style={{ letterSpacing: "2px" }}>
-					<div className="text-lg md:text-5xl font-motherland">See you in paradise</div>
-					<Image alt="Plane with trail" src={planeTrail} className="w-32 absolute -top-10 -right-5 -rotate-23 md:hidden" />
+				<div className="font-lora w-full text-center mt-3 relative " style={{ letterSpacing: "2px" }}>
+					<div className="text-2xl md:text-5xl font-motherland">See you in paradise</div>
+					<Image
+						alt="Plane with trail"
+						src={planeTrail}
+						className="w-28 md:w-36 absolute -top-20 -right-10 md:-top-32 md:-right-12 -rotate-23"
+					/>
 				</div>
 			</div>
 
