@@ -29,7 +29,7 @@ export default function Header() {
 	];
 
 	return (
-		<div className={"w-full flex flex-row items-center justify-center relative py-6 md:py-5 font-bodoni"}>
+		<div className={"w-full flex flex-row items-center justify-center relative py-6 md:py-5 font-bodoni z-50"}>
 			<Hamburger onClick={() => setIsOpen(!isOpen)} style={{ position: "absolute", left: 20, top: 25 }} />
 			<Link className="font-motherland text-[22px] md:text-3xl md:ml-8 md:mr-12 cursor-pointer whitespace-nowrap" href={"/"}>
 				Natasha & Derek
