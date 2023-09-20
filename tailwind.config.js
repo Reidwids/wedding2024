@@ -27,7 +27,11 @@ module.exports = {
 				23: "23deg",
 				60: "60deg",
 			},
-			objectPosition: { 40: "40% 90%", 50: "50% 90%" },
+			backgroundPosition: {
+				"custom-pos1": "center left -400px",
+				"custom-pos2": "center bottom -50px",
+				"custom-pos3": "center bottom",
+			},
 		},
 	},
 	plugins: [],
