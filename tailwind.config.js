@@ -28,8 +28,9 @@ module.exports = {
 				60: "60deg",
 			},
 			backgroundPosition: {
-				"custom-pos1": "center left -400px",
-				"custom-pos2": "center bottom -50px",
+				"custom-pos1": "center left 40%",
+				"custom-pos2": "center bottom 5%",
+				"custom-pos2-1": "center bottom 20%",
 				"custom-pos3": "center bottom",
 			},
 		},

@@ -37,7 +37,7 @@ export default function Home() {
 			</div>
 			<div
 				className="w-full flex justify-center h-[450px] md:h-[800px] -z-10
-				bg-scroll md:bg-fixed bg-cover bg-custom-pos2 bg-no-repeat"
+				bg-scroll md:bg-fixed bg-cover bg-custom-pos2 md:bg-custom-pos2-1 bg-no-repeat"
 				style={{
 					backgroundImage: "url('/bwVert1.jpg')",
 					boxShadow:
@@ -45,8 +45,8 @@ export default function Home() {
 				}}
 			/>
 
-			<div className="max-w-4xl flex flex-col items-center my-6 ">
-				<div className="font-roseritta text-[35px] md:text-[70px] text-center" style={{ letterSpacing: "2px" }}>
+			<div className="max-w-4xl flex flex-col items-center my-6 md:mb-8 ">
+				<div className="font-roseritta text-[35px] md:text-[64px] text-center" style={{ letterSpacing: "2px" }}>
 					<div className="">Meet Us In Mexico</div>
 					<div className=""></div>
 				</div>
@@ -55,7 +55,7 @@ export default function Home() {
 					<Image
 						alt="Plane with trail"
 						src={planeTrail}
-						className="w-28 md:w-36 absolute -top-20 -right-10 md:-top-32 md:-right-12 -rotate-23"
+						className="w-28 md:w-36 absolute -top-20 -right-10 md:-top-[115px] md:-right-16 -rotate-23 opacity-70"
 					/>
 				</div>
 			</div>
