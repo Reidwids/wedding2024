@@ -9,22 +9,27 @@ export default function Header() {
 		{
 			name: "Photos",
 			href: "/photos",
+			active: true,
 		},
 		{
 			name: "RSVP",
 			href: "/rsvp",
+			active: false,
 		},
 		{
 			name: "Events",
 			href: "/events",
+			active: false,
 		},
 		{
 			name: "Travel",
 			href: "/travel",
+			active: false,
 		},
 		{
 			name: "FAQ",
 			href: "/faq",
+			active: false,
 		},
 	];
 
@@ -36,9 +41,19 @@ export default function Header() {
 			</Link>
 			<div className=" hidden w-full md:flex text-[16px] space-x-8">
 				{routes.map((route) => (
-					<Link href={route.href} className="group relative  transition-all" key={route.name}>
+					<Link
+						href={route.active ? route.href : "#"}
+						style={{
+							color: route.active ? "#000" : "#aaa",
+							cursor: route.active ? "pointer" : "default",
+						}}
+						className="group relative  transition-all"
+						key={route.name}
+					>
 						<div>{route.name}</div>
-						<div className="absolute bottom-0 left-0 h-[1px] block w-0 group-hover:w-full transition-all duration-500 bg-[#666]"></div>
+						{route.active && (
+							<div className="absolute bottom-0 left-0 h-[1px] block w-0 group-hover:w-full transition-all duration-500 bg-[#666]" />
+						)}
 					</Link>
 				))}
 			</div>
@@ -53,7 +68,11 @@ export default function Header() {
 				{routes.map((route, i) => (
 					<div key={route.name + i}>
 						<Link
-							href={route.href!}
+							href={route.active ? route.href : "#"}
+							style={{
+								color: route.active ? "#000" : "#aaa",
+								cursor: route.active ? "pointer" : "default",
+							}}
 							className="space-x-4 flex py-2 items-center px-4 transition-all text-md"
 							onClick={() => {
 								document.getElementById("toggle")?.click();

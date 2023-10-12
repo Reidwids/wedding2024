@@ -8,12 +8,13 @@ interface Props {
 
 export default function Hamburger({ style, onClick }: Props) {
 	return (
-		<div className="relative w-6 h-6 md:hidden" style={style} onClick={onClick}>
+		<div className="relative w-6 h-6 md:hidden" style={style}>
 			<input
 				id="toggle"
 				type="checkbox"
 				onClick={(e) => {
 					e.stopPropagation();
+					onClick?.();
 				}}
 			></input>
 
