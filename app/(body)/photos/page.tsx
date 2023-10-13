@@ -79,7 +79,7 @@ export default function Photos() {
 		Gallery19,
 	];
 
-	const [selectedImage, setSelectedImage] = useState<StaticImageData | null>(null);
+	const [selectedImage, setSelectedImage] = useState<StaticImageData | string | null>(null);
 	return (
 		<div className="text-center font-parisienne ">
 			<TextDivider />
@@ -90,8 +90,9 @@ export default function Photos() {
 						src={image}
 						alt={`gallery-${index}`}
 						className="w-full rounded-md shadow-picture cursor-pointer"
-						onClick={() => {
-							setSelectedImage(image);
+						onClick={(e) => {
+							const imageSrc = e.currentTarget.getAttribute("src");
+							setSelectedImage(imageSrc);
 						}}
 					/>
 				))}
