@@ -91,9 +91,7 @@ export default function Photos() {
 						alt={`gallery-${index}`}
 						className="w-full rounded-md shadow-picture cursor-pointer"
 						onClick={(e) => {
-							console.log(image);
 							const imageSrc = e.currentTarget.getAttribute("src");
-							console.log(imageSrc);
 							setSelectedImage(imageSrc);
 						}}
 					/>
