@@ -102,11 +102,14 @@ export default function Photos() {
 						setSelectedImage(null);
 					}}
 				>
-					<img
-						src={selectedImage?.src}
-						alt="selected-image"
-						className="w-auto h-fit px-2 rounded-xl cursor-pointer md:max-w-[800px] max-h-[500px] md:max-h-[600px]"
-					/>
+					{selectedImage && (
+						<Image
+							key={"selected-image"}
+							src={selectedImage}
+							alt="selected-image"
+							className="w-auto h-fit px-2 rounded-xl cursor-pointer md:max-w-[800px] max-h-[500px] md:max-h-[600px]"
+						/>
+					)}
 				</div>
 			</div>
 		</div>
