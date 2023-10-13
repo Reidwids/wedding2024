@@ -38,9 +38,11 @@ import Gallery35 from "@/public/gallery/gallery-35.jpg";
 import Gallery36 from "@/public/gallery/gallery-36.jpg";
 import Gallery37 from "@/public/gallery/gallery-37.jpg";
 import Gallery38 from "@/public/gallery/gallery-38.jpg";
+import TEST from "@/public/feetPic1.jpg";
 
 export default function Photos() {
 	const imageList = [
+		TEST,
 		Gallery2L,
 		Gallery1,
 		Gallery3,

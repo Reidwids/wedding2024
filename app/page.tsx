@@ -1,6 +1,4 @@
-import Image from "next/image";
 import CountdownTimer from "./components/countdown/Countdown";
-import planeTrail from "@/public/plane-trail.svg";
 
 export default function Home() {
 	return (
