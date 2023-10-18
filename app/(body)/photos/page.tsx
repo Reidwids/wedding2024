@@ -1,6 +1,5 @@
 "use client";
-import Loader from "@/app/components/Loader";
-import TextDivider from "@/app/components/TextDivider";
+import Loader from "../../components/Loader";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 
