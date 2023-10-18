@@ -1,6 +1,6 @@
 "use client";
 import { GetGuestsRes } from "@/app/api/guests/group/route";
-import Spinner from "@/app/components/Spinner";
+import Loader from "@/app/components/Loader";
 import { Guest } from "@prisma/client";
 import React, { useEffect, useState } from "react";
 
@@ -111,7 +111,7 @@ export default function RSVP() {
 							RSVP
 							{isLoading && (
 								<div className="ml-2 h-full flex items-center">
-									<Spinner w="16px" h="16px" />
+									<Loader w="16px" h="16px" />
 								</div>
 							)}
 						</button>
@@ -165,7 +165,7 @@ export default function RSVP() {
 							RSVP
 							{isLoading && (
 								<div className="ml-2 h-full flex items-center">
-									<Spinner w="16px" h="16px" />
+									<Loader w="16px" h="16px" />
 								</div>
 							)}
 						</button>

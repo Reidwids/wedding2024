@@ -1,5 +1,5 @@
 "use client";
-import Loader from "../../components/Loader";
+import Loader from "@/app/components/Loader";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 
