@@ -1,10 +1,6 @@
 import "./globals.css";
-import { Parisienne, Lora, Libre_Barcode_39 } from "next/font/google";
+import { Lora } from "next/font/google";
 import localFont from "next/font/local";
-// Parisienne and Libre Baskerville
-// Parisienne and Lora
-// Sacramento and Montserrat
-//
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -59,25 +55,11 @@ const bodoni = localFont({
 	],
 });
 
-const parisienne = Parisienne({
-	weight: ["400"],
-	style: ["normal"],
-	subsets: ["latin"],
-	variable: "--font-parisienne",
-});
-
-const libreBarcode = Libre_Barcode_39({
-	weight: ["400"],
-	style: ["normal"],
-	subsets: ["latin"],
-	variable: "--font-libreBarcode",
-});
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html
 			lang="en"
-			className={`${roseritta.variable} ${motherland.variable} ${bodoni.variable} ${classy.variable} ${libreBarcode.variable} ${parisienne.variable} ${lora.variable}`}
+			className={`${roseritta.variable} ${motherland.variable} ${bodoni.variable} ${classy.variable} ${lora.variable}`}
 		>
 			<head>
 				<link rel="shortcut icon" href="/heart.png" />

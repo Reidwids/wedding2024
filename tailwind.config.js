@@ -17,12 +17,10 @@ module.exports = {
 					"rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
 			},
 			fontFamily: {
-				parisienne: ["var(--font-parisienne)", "serif"],
 				lora: ["var(--font-lora)", "serif"],
 				classy: ["var(--font-classy)", "serif"],
 				bodoni: ["var(--font-bodoni)", "serif"],
 				motherland: ["var(--font-motherland)", "serif"],
-				libreBarcode: ["var(--font-libreBarcode)", "serif"],
 				roseritta: ["var(--font-roseritta)", "serif"],
 			},
 			rotate: {
