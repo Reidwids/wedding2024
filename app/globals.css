@@ -16,7 +16,7 @@
 
 .fade-in-text {
 	transform: scale(0.94);
-	animation: scale 3s forwards cubic-bezier(0.5, 1, 29, 1);
+	animation: scale 5s forwards cubic-bezier(0.5, 1, 29, 1);
 }
 
 @keyframes scale {

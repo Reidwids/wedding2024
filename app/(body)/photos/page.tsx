@@ -1,4 +1,5 @@
 "use client";
+import Loader from "@/app/components/Loader";
 import TextDivider from "@/app/components/TextDivider";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
@@ -44,15 +45,28 @@ export default function Photos() {
 	];
 
 	const [selectedImage, setSelectedImage] = useState<StaticImageData | string | null>(null);
+	const [loaded, setLoaded] = useState(false);
+	let counter = 0;
 	return (
 		<div className="text-center font-parisienne ">
-			<TextDivider />
-			<div className="columns-2 md:columns-4 gap-3 px-3 space-y-3 mb-20 ">
+			<div style={{ display: !loaded ? "flex" : "none" }} className="w-full justify-center mt-20">
+				<Loader />
+			</div>
+			<div
+				className="columns-2 md:columns-4 gap-3 px-3 space-y-3 mb-20 "
+				style={{ visibility: loaded ? "visible" : "hidden" }}
+			>
 				{galleryImages.map((image, index) => (
 					<Image
+						onLoad={(e) => {
+							counter++;
+							if (counter === galleryImages.length) {
+								setLoaded(true);
+							}
+						}}
 						key={index}
-						width={300}
-						height={400}
+						width={400}
+						height={300}
 						src={image}
 						alt={`gallery-${index}`}
 						className="w-full rounded-md shadow-picture cursor-pointer"
