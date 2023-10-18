@@ -78,15 +78,55 @@ export default function Photos() {
 		Gallery38,
 		Gallery19,
 	];
+	const galleryImages = [
+		"/gallery/gallery-1.jpg",
+		"/gallery/gallery-2.jpg",
+		"/gallery/gallery-3.jpg",
+		"/gallery/gallery-4.jpg",
+		"/gallery/gallery-5.jpg",
+		"/gallery/gallery-6.jpg",
+		"/gallery/gallery-7.jpg",
+		"/gallery/gallery-8.jpg",
+		"/gallery/gallery-9.jpg",
+		"/gallery/gallery-10.jpg",
+		"/gallery/gallery-11.jpg",
+		"/gallery/gallery-12.jpg",
+		"/gallery/gallery-13.jpg",
+		"/gallery/gallery-14.jpg",
+		"/gallery/gallery-15.jpg",
+		"/gallery/gallery-16.jpg",
+		"/gallery/gallery-17.jpg",
+		"/gallery/gallery-18.jpg",
+		"/gallery/gallery-19.jpg",
+		"/gallery/gallery-20.jpg",
+		"/gallery/gallery-21.jpg",
+		"/gallery/gallery-22.jpg",
+		"/gallery/gallery-24.jpg",
+		"/gallery/gallery-25.jpg",
+		"/gallery/gallery-26.jpg",
+		"/gallery/gallery-27.jpg",
+		"/gallery/gallery-28.jpg",
+		"/gallery/gallery-29.jpg",
+		"/gallery/gallery-30.jpg",
+		"/gallery/gallery-31.jpg",
+		"/gallery/gallery-33.jpg",
+		"/gallery/gallery-34.jpg",
+		"/gallery/gallery-35.jpg",
+		"/gallery/gallery-36.jpg",
+		"/gallery/gallery-37.jpg",
+		"/gallery/gallery-38.jpg",
+	];
 
 	const [selectedImage, setSelectedImage] = useState<StaticImageData | string | null>(null);
 	return (
 		<div className="text-center font-parisienne ">
 			<TextDivider />
 			<div className="columns-2 md:columns-4 gap-3 px-3 space-y-3 mb-20 ">
-				{imageList.map((image, index) => (
+				{galleryImages.map((image, index) => (
 					<Image
 						key={index}
+						width={600}
+						height={400}
 						src={image}
 						alt={`gallery-${index}`}
 						className="w-full rounded-md shadow-picture cursor-pointer"
