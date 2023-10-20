@@ -28,7 +28,7 @@ export default function Home() {
 				<div className="font-lora w-full text-center mt-5" style={{ letterSpacing: "2px" }}>
 					<div className="text-lg md:text-2xl">RIVIERIA MAYA, MEXICO</div>
 					<div className="text-sm md:text-lg mt-3 md:mt-5">
-						<div>NOVEMBER 20 - 26 2024</div>
+						<div>NOVEMBER 20 - 27 2024</div>
 						<div>CEREMONY NOV 23</div>
 					</div>
 				</div>
