@@ -2,11 +2,12 @@
 import { GetGuestsRes } from "@/app/api/guests/group/route";
 import Loader from "@/app/components/Loader";
 import { Guest } from "@prisma/client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-function fetcher(...args: any) {
-	return fetch(args).then((res) => res.json());
-}
+// function fetcher(...args: any) {
+// 	return fetch(args).then((res) => res.json());
+// }
 
 export default function RSVP() {
 	const [rsvpStep, setRsvpStep] = useState(0);
@@ -51,7 +52,7 @@ export default function RSVP() {
 		setError("");
 
 		if (selectedGuests.length === 0) {
-			setError("Please select a guest");
+			setError("Please select a response");
 			setIsLoading(false);
 			return;
 		}
@@ -84,26 +85,34 @@ export default function RSVP() {
 	};
 
 	return (
-		<div className="w-full flex justify-center items-center font-lora">
-			<div className="w-full max-w-[600px] flex flex-col relative h-[350px] shadow-card items-center text-center p-5 overflow-hidden">
-				<div className="font-parisienne text-5xl">R.S.V.P</div>
+		<div
+			className="w-full flex justify-center items-center font-lora bg-rsvp-bg bg-cover bg-center "
+			style={{ boxShadow: "0 3px 3px #00000033 inset" }}
+		>
+			<div className="w-full max-w-[600px] flex flex-col relative h-[350px] shadow-card items-center text-center px-2 mx-2 overflow-hidden bg-[#ffffffee] rounded-lg ">
+				<div className="font-roseritta text-5xl md:text-5xl border-b-2 w-full py-2.5 ">R . S . V . P</div>
 				<div
-					className={"flex flex-col items-center absolute mt-12 transition-all w-[60%]"}
+					className={"flex flex-col items-center absolute mt-8 md:mt-12 transition-all w-[80%]"}
 					style={{
-						left: rsvpStep === 0 ? "20%" : "-100%",
+						left: rsvpStep === 0 ? "10%" : "-100%",
 						transition: "2s",
 					}}
 				>
-					<div className="text-[15px] mt-5">
+					<div className="text-[15px] mt-10">
 						<p className="mb-2">We are so excited to celebrate our special day with you!</p>
 						<p>Please enter your email to RSVP your party.</p>
 					</div>
-					<div className="mt-5">
+					<div className="mt-3">
 						<input
 							type="text"
 							className="border border-[#ddd] rounded-sm px-3 py-2 w-full text-center text-lg"
 							placeholder="Email"
 							onChange={(e) => setEmail(e.target.value)}
+							onKeyDown={(e) => {
+								if (e.key === "Enter") {
+									resolveEmail();
+								}
+							}}
 						/>
 					</div>
 					<div className="mt-4">
@@ -120,25 +129,25 @@ export default function RSVP() {
 				</div>
 
 				<div
-					className={"flex flex-col items-center absolute mt-12 transition-all w-[60%]"}
+					className={"flex flex-col items-center absolute mt-12 transition-all w-[80%]"}
 					style={{
-						left: rsvpStep === 0 ? "100%" : rsvpStep === 1 ? "20%" : "-100%",
+						left: rsvpStep === 0 ? "100%" : rsvpStep === 1 ? "10%" : "-100%",
 						transition: "2s",
 					}}
 				>
-					<div className="text-[15px] mt-5">
+					<div className="text-[15px] mt-6">
 						<p>Please select the members of your party you would like to RSVP.</p>
 					</div>
-					<table>
+					<table className="mt-2">
 						<thead>
 							<tr>
-								<th className="text-left font-parisienne">&nbsp;y&nbsp;/&nbsp;n</th>
+								<th className="text-left font-parisienne">y&nbsp;/&nbsp;n</th>
 								<th className="text-left"></th>
 							</tr>
 						</thead>
-						<tbody className="">
+						<tbody className="block max-h-[100px] overflow-auto">
 							{guestProfiles?.guests.map((guest: Guest) => (
-								<tr className="border-b border-[#ddd]" key={guest.name}>
+								<tr className="border-b border-[#ddd] whitespace-nowrap" key={guest.name}>
 									<td>
 										<input
 											type="radio"
@@ -155,7 +164,7 @@ export default function RSVP() {
 											onChange={(e) => handleRadioChange(e, guest)}
 										/>
 									</td>
-									<td className="py-2 font-parisienne">{guest.name}</td>
+									<td className="py-2 pr-5 font-parisienne">{guest.name}</td>
 								</tr>
 							))}
 						</tbody>
@@ -179,10 +188,11 @@ export default function RSVP() {
 						transition: "2s",
 					}}
 				>
-					<div className="text-[15px] mt-5">
-						<div className="font-parisienne text-3xl mt-5">Thank you</div>
+					<div className="text-[15px] mt-5 flex items-center flex-col">
+						<div className="font-parisienne text-3xl mt-3">Thank you</div>
 						<p className="mt-2">We're so glad you'll be joining us.</p>
 						<p>We can't wait to celebrate with you in paradise!</p>
+						<Image alt="Palm Trees" src="/palmTrees.svg" className="w-16 mt-2" width={16} height={16} />
 					</div>
 				</div>
 				<div className="flex justify-center items-center absolute bottom-6">

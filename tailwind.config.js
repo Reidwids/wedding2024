@@ -9,6 +9,7 @@ module.exports = {
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"cover-photo": "url('/coverPhoto3.jpg')",
+				"rsvp-bg": "url('/rsvpBg.jpg')",
 				"gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 			},
 			boxShadow: {

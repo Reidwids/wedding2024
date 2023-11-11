@@ -67,8 +67,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			</head>
 			<body className={`relative`}>
 				<Header />
-				<div className="min-w-full flex justify-center min-h-[calc(100vh-160px)]">{children}</div>
-				<Footer />
+				<div className="min-w-full flex justify-center min-h-[calc(100vh-81px)] md:min-h-[calc(100vh-76px)]">{children}</div>
+				{/* <Footer /> */}
 			</body>
 		</html>
 	);
