@@ -5,7 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 const lora = Lora({
-	weight: ["400", "700"],
+	weight: ["400", "500", "600", "700"],
 	style: ["normal", "italic"],
 	subsets: ["latin"],
 	variable: "--font-lora",
