@@ -17,16 +17,15 @@ export default function Travel() {
 					<p className="text-md mt-2">
 						In the interest of keeping travel options flexible and economical, travel has not been predefined. Instead, will
 						be providing you with the best available options we have found, and will leave it up to you to create your own
-						retreat!
+						vacation!
 					</p>
 				</div>
 				<div className="mt-5">
 					<h3 className="text-2xl font-[500]">Location</h3>
 					<p className="text-md mt-2">
-						The wedding will be held at Iberostar Paraiso Beach Resort in Riviera Maya. Paraíso Beach is located on the Playa
-						Paraíso complex grounds, which includes a total of 5 Iberostar All-Inclusive resorts. As guests of beach, we have
-						access to two resorts, both Paraiso beach and Paraiso Del Mar. Just remember when booking that to attend the
-						wedding you must be staying at Paraiso Beach!
+						The wedding will be held at Iberostar Paraiso Beach Resort in Riviera Maya. Paraiso Beach is located on the Playa
+						Paraíso complex grounds, which includes a total of 5 Iberostar All-Inclusive resorts. Remember when booking that
+						to attend the wedding you must be staying specifically at Paraiso Beach!
 					</p>
 				</div>
 
@@ -38,11 +37,11 @@ export default function Travel() {
 				<div className="mt-5">
 					<h3 className="text-2xl font-[500] pt-5">Timeline</h3>
 					<p className="text-md mt-2">
-						We hope that everybody will be able to join us for week from{" "}
+						We hope that everybody will be able to join us for a week from{" "}
 						<span className="font-bold">Wednesday November 20th</span> to{" "}
 						<span className="font-bold">Wednesday November 27th</span>. - However, we understand that this may not be
 						possible for everyone. Please feel free to customize your dates however you'd like, just remember that the
-						ceremony will be held the afternoon of <span className="font-bold">Saturday November 23rd</span>.
+						ceremony will be held on <span className="font-bold">Saturday November 23rd</span>.
 					</p>
 				</div>
 
@@ -117,8 +116,8 @@ export default function Travel() {
 						<h3 className="text-2xl font-[500]">Finishing Steps</h3>
 						<div className="text-md mt-2">
 							<div>
-								Once you have completed booking your booking, please let us know what your travel plans are! We will be
-								putting together a list of everyone's booking and submitting it to the resort in efforts to put all of our
+								Once you have completed your booking, please let us know what your travel plans are! We will be putting
+								together a list of everyone's booking details and submitting it to the resort in efforts to put all of our
 								rooms in the same area. Please send me an email at{" "}
 								<a className="underline" href="mailto:reidwids@gmail.com">
 									reidwids@gmail.com
