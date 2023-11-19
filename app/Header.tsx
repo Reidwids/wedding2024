@@ -12,6 +12,11 @@ export default function Header() {
 			active: true,
 		},
 		{
+			name: "Travel",
+			href: "/travel",
+			active: true,
+		},
+		{
 			name: "RSVP",
 			href: "/rsvp",
 			active: false,
@@ -19,11 +24,6 @@ export default function Header() {
 		{
 			name: "Events",
 			href: "/events",
-			active: false,
-		},
-		{
-			name: "Travel",
-			href: "/travel",
 			active: false,
 		},
 		{

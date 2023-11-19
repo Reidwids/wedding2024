@@ -11,7 +11,7 @@ export default function Travel() {
 			<h1 className="text-5xl mt-5 text-center font-roseritta">Travel Information</h1>
 			<h1 className="text-xl mt-1 font-lora">Booking your journey</h1>
 			<Image alt="Text Divider" src="/plane-trail2.svg" className="-rotate-[27deg] -mt-10 ml-16 " width={200} height={200} />
-			<div className="mt-5 max-w-3xl ">
+			<div className="mt-5 max-w-3xl bg-white ">
 				<div className="md:mt-3">
 					<h3 className="text-2xl font-[500]">Overview</h3>
 					<p className="text-md mt-2">
@@ -77,7 +77,14 @@ export default function Travel() {
 									</a>
 									.
 								</li>
-								<li>Book your airport transfer.</li>
+								<li>
+									Book your airport transfer. We recommend{" "}
+									<a className="underline" href="https://www.canadatransfers.com/" target="_blank">
+										Canada Transfers
+									</a>
+									. If you know other guests who will be arriving at the same time, we suggest booking your transfer
+									together.
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -107,7 +114,7 @@ export default function Travel() {
 						</div>
 					</div>
 					<div className="mt-5">
-						<h3 className="text-xl font-[500]">Finishing Steps</h3>
+						<h3 className="text-2xl font-[500]">Finishing Steps</h3>
 						<div className="text-md mt-2">
 							<div>
 								Once you have completed booking your booking, please let us know what your travel plans are! We will be

@@ -47,7 +47,9 @@ export default function Photos() {
 	const [loaded, setLoaded] = useState(false);
 	let counter = 0;
 	return (
-		<div className="text-center font-parisienne ">
+		<div className="flex flex-col items-center w-full ">
+			{/* <h1 className="text-5xl my-5 font-roseritta border-b-2 border-black w-fit ">Our Memories</h1> */}
+
 			<div style={{ display: !loaded ? "flex" : "none" }} className="w-full justify-center mt-20">
 				<Loader />
 			</div>
