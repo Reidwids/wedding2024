@@ -12,7 +12,7 @@ export default function Travel() {
 			<h1 className="text-xl mt-1 font-lora">Booking your journey</h1>
 			<Image alt="Text Divider" src="/plane-trail2.svg" className="-rotate-[27deg] -mt-10 ml-16 " width={200} height={200} />
 			<div className="mt-5 max-w-3xl bg-white ">
-				<div className="md:mt-3">
+				<div className="">
 					<h3 className="text-2xl font-[500]">Overview</h3>
 					<p className="text-md mt-2">
 						In the interest of keeping travel options flexible and economical, travel has not been predefined. Instead, will
@@ -85,6 +85,9 @@ export default function Travel() {
 									together.
 								</li>
 							</ul>
+							<div className="mt-2">
+								From what we've seen, this option usually falls in the $1400 - $1700 pp range for a 7 night stay.
+							</div>
 						</div>
 					</div>
 					<div className="mt-5">
@@ -110,6 +113,9 @@ export default function Travel() {
 									Book your vacation. Ensure the flight, resort stay, and airport transfer are all included in the package.
 								</li>
 							</ul>
+							<div className="mt-2">
+								From what we've seen, this option usually falls in the $1700 - $2100 pp range for a 7 night stay.
+							</div>
 						</div>
 					</div>
 					<div className="mt-5">
