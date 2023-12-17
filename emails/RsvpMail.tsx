@@ -13,9 +13,11 @@ import {
 	Text,
 	Tailwind,
 	Link,
+	Font,
 } from "@react-email/components";
 import Spacer from "./Spacer";
 import { Guest } from "@prisma/client";
+import PalmTrees from "./palmTrees.svg";
 
 interface Props {
 	guests: Guest[];
@@ -26,7 +28,18 @@ export default function rsvpMail({
 }: Props) {
 	return (
 		<Html lang="en">
-			<Head />
+			<Head>
+				<Font
+					fontFamily="Roboto"
+					fallbackFontFamily="Verdana"
+					webFont={{
+						url: "https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2",
+						format: "woff2",
+					}}
+					fontWeight={400}
+					fontStyle="normal"
+				/>
+			</Head>
 			<Tailwind>
 				<Body>
 					<Container
@@ -34,13 +47,19 @@ export default function rsvpMail({
 						style={{
 							backgroundColor: "#F3EDE2",
 							backgroundSize: "cover",
-							fontFamily: "roboto, geneva, sans-serif",
+							fontFamily: "Roboto, geneva, sans-serif",
 						}}
 					>
 						<Section className="text-center w-60% max-w-[425px] min-w-[300px] bg-white rounded-xl shadow-xl my-20">
 							<Row>
 								<Column align="right" />
 								<Column align="center" width="90%">
+									<Img
+										alt="Palm Trees"
+										src={"https://nd-2024.s3.ca-central-1.amazonaws.com/images/palmTrees.svg"}
+										width={16}
+										height={16}
+									/>
 									<Spacer height={20} />
 									<Heading className="text-[22px] font-bold text-[#0C1335]">You have submitted the following RSVP</Heading>
 									<Text>
@@ -50,7 +69,7 @@ export default function rsvpMail({
 											</Text>
 										))}
 									</Text>
-									<Spacer height={20} />
+									{/* <Spacer height={5} /> */}
 									<Text className="text-[#60678E] text-[10px]">
 										If you'd like to change your response, you can do so before March 1, 2024
 									</Text>
