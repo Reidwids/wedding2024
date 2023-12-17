@@ -19,7 +19,12 @@ export default function Header() {
 		{
 			name: "RSVP",
 			href: "/rsvp",
-			active: false,
+			active: true,
+		},
+		{
+			name: "Dress Code",
+			href: "/dress-code",
+			active: true,
 		},
 		{
 			name: "Events",
