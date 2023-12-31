@@ -4,7 +4,7 @@ import React from "react";
 export default function DressCode() {
 	return (
 		<div
-			className="w-full flex flex-col items-center font-lora px-3 mb-5"
+			className="w-full flex flex-col items-center font-lora px-3 mb-5 text-md"
 			style={{ boxShadow: "0 3px 3px #00000033 inset" }}
 		>
 			<h1 className="text-5xl mt-5 text-center font-roseritta">Dress code</h1>
@@ -37,7 +37,8 @@ export default function DressCode() {
 					<div>
 						A formal evening dress, a dressy cocktail dress, or a chic pantsuit in a light neutral color such as any shade of
 						nude, sandy beige, or grey tones, champagnes, silvers and golds are encouraged. If you don't feel comfortable in
-						a color, black is also acceptable.
+						a color, black is also acceptable. We kindly request that you avoid patterns to maintain a cohesive and elegant
+						atmosphere.
 					</div>
 				</div>
 				<div>
@@ -45,8 +46,9 @@ export default function DressCode() {
 					<div>
 						A black, light grey, or tan colored suit jacket/blazer is encouraged, but considering the temperature can be
 						skipped if you so choose. Neutral colored dress shirt and pants (black, white, tan, grey, etc) are encouraged -
-						we do ask that guests do not wear t shirts or shorts though. A tie or bowtie is optional. Textures and unique
-						materials are encouraged, as well as pocket squares, suspenders, and any other accessories.
+						we do ask that guests do not wear t shirts or shorts though. Textures and unique materials are encouraged, as
+						well as pocket squares, suspenders, ties, bowties, and/or any other accessories. We kindly request that you avoid
+						patterns to maintain a cohesive and elegant aesthetic.
 					</div>
 				</div>
 			</div>

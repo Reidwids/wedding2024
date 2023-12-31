@@ -25,7 +25,8 @@ export default function Travel() {
 					<p className="text-md mt-2">
 						The wedding will be held at Iberostar Paraiso Beach Resort in Riviera Maya. Paraiso Beach is located on the Playa
 						Paraíso complex grounds, which includes a total of 5 Iberostar All-Inclusive resorts. Remember when booking that
-						to attend the wedding you must be staying specifically at Paraiso Beach!
+						to attend the wedding you must be staying specifically at Iberostar Paraiso Beach! (Not Del Mar, Lindo, Maya, or
+						Grand)
 					</p>
 				</div>
 
@@ -39,9 +40,9 @@ export default function Travel() {
 					<p className="text-md mt-2">
 						We hope that everybody will be able to join us for a week from{" "}
 						<span className="font-bold">Wednesday November 20th</span> to{" "}
-						<span className="font-bold">Wednesday November 27th</span>. - However, we understand that this may not be
-						possible for everyone. Please feel free to customize your dates however you'd like, just remember that the
-						ceremony will be held on <span className="font-bold">Saturday November 23rd</span>.
+						<span className="font-bold">Wednesday November 27th</span>. However, we understand that this may not be possible
+						for everyone. Please feel free to customize your dates however you'd like, just remember that the ceremony will
+						be held on <span className="font-bold">Saturday November 23rd</span>.
 					</p>
 				</div>
 
@@ -86,7 +87,7 @@ export default function Travel() {
 								</li>
 							</ul>
 							<div className="mt-2">
-								From what we've seen, this option usually falls in the $1400 - $1700 pp range for a 7 night stay.
+								From what we've seen, this option usually falls in the $1400 - $1800 pp range for a 7 night stay.
 							</div>
 						</div>
 					</div>
