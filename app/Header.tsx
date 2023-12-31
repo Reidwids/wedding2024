@@ -2,9 +2,13 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Hamburger from "./components/Hamburger";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
+	const path = usePathname();
+	const URLpath = "/" + path.split("/").pop();
+
 	const routes = [
 		{
 			name: "Photos",
@@ -29,12 +33,12 @@ export default function Header() {
 		{
 			name: "Events",
 			href: "/events",
-			active: false,
+			active: true,
 		},
 		{
 			name: "FAQ",
 			href: "/faq",
-			active: false,
+			active: true,
 		},
 	];
 
@@ -45,22 +49,26 @@ export default function Header() {
 				Natasha & Derek
 			</Link>
 			<div className=" hidden w-full md:flex text-[16px] space-x-8">
-				{routes.map((route) => (
-					<Link
-						href={route.active ? route.href : "#"}
-						style={{
-							color: route.active ? "#000" : "#aaa",
-							cursor: route.active ? "pointer" : "default",
-						}}
-						className="group relative  transition-all"
-						key={route.name}
-					>
-						<div>{route.name}</div>
-						{route.active && (
-							<div className="absolute bottom-0 left-0 h-[1px] block w-0 group-hover:w-full transition-all duration-500 bg-[#666]" />
-						)}
-					</Link>
-				))}
+				{routes.map((route) => {
+					return (
+						<Link
+							href={route.active ? route.href : "#"}
+							style={{
+								color: route.active ? "#000" : "#aaa",
+								cursor: route.active ? "pointer" : "default",
+							}}
+							className="group relative  transition-all"
+							key={route.name}
+						>
+							<div>{route.name}</div>
+							{route.active && route.href !== URLpath && (
+								<div className="absolute bottom-0 left-0 h-[1px] block w-0 group-hover:w-full transition-all duration-500 bg-[#666]" />
+							)}
+							{route.href === URLpath && <div className="absolute bottom-0 left-0 h-[1px] block w-full bg-[#666]" />}
+							{}
+						</Link>
+					);
+				})}
 			</div>
 			<div
 				className="md:hidden absolute w-full top-14 flex flex-col bg-[#ffffffee] z-50 shadow-md "
