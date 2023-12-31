@@ -1,4 +1,4 @@
-import { sendRsvpNotification } from "@/emails/mailer";
+import { sendRsvpNotifications } from "@/emails/mailer";
 import prisma from "@/app/lib/prisma";
 import { isValidBody } from "@/app/utils/utils";
 import { Guest } from "@prisma/client";
@@ -7,6 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 // Get all guests connected to an email within a group
 export type GuestsRSVPReq = {
 	guests: Guest[];
+	email: string;
 };
 
 export async function PUT(req: NextRequest) {
@@ -14,7 +15,7 @@ export async function PUT(req: NextRequest) {
 		return new NextResponse(JSON.stringify({ name: "Invalid body" }), { status: 400 });
 	}
 
-	const { guests }: GuestsRSVPReq = await req.json();
+	const { guests, email }: GuestsRSVPReq = await req.json();
 
 	try {
 		const reqGuests = await prisma.guest.findMany({
@@ -47,7 +48,7 @@ export async function PUT(req: NextRequest) {
 				},
 			});
 		}
-		await sendRsvpNotification(guests);
+		await sendRsvpNotifications(email, guests);
 
 		return new NextResponse(JSON.stringify({ message: "Guests RSVP'd" }), { status: 200 });
 	} catch (error) {

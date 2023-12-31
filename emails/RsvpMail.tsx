@@ -23,9 +23,7 @@ interface Props {
 	guests: Guest[];
 }
 
-export default function rsvpMail({
-	guests = [{ name: "Derek Reid", rsvp: true, rspvDate: new Date(), email: "test@gmail.com", groupId: "12345" }],
-}: Props) {
+export default function rsvpMail({ guests }: Props) {
 	return (
 		<Html lang="en">
 			<Head>
@@ -45,23 +43,26 @@ export default function rsvpMail({
 					<Container
 						className="w-full min-w-full"
 						style={{
-							backgroundColor: "#F3EDE2",
+							backgroundColor: "#98A28F",
 							backgroundSize: "cover",
 							fontFamily: "Roboto, geneva, sans-serif",
+							padding: "20px",
 						}}
 					>
-						<Section className="text-center w-60% max-w-[425px] min-w-[300px] bg-white rounded-xl shadow-xl my-20">
+						<Section className="text-center max-w-[425px] min-w-[300px] bg-white rounded-xl shadow-xl my-20">
 							<Row>
 								<Column align="right" />
 								<Column align="center" width="90%">
+									<Spacer height={15} />
 									<Img
 										alt="Palm Trees"
-										src={"https://nd-2024.s3.ca-central-1.amazonaws.com/images/palmTrees.svg"}
-										width={16}
-										height={16}
+										src={"https://nd-2024.s3.ca-central-1.amazonaws.com/images/palmTrees.png"}
+										width={50}
+										height={50}
 									/>
-									<Spacer height={20} />
-									<Heading className="text-[22px] font-bold text-[#0C1335]">You have submitted the following RSVP</Heading>
+									<Heading className="text-[22px] font-bold text-[#0C1335]">
+										You have submitted the following {guests.length > 1 ? "RSVPs" : "RSVP"}
+									</Heading>
 									<Text>
 										{guests.map((guest) => (
 											<Text key={guest.name} className="text-[#60678E] text-[14px]">
