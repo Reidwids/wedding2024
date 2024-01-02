@@ -1,5 +1,6 @@
 "use client";
 import Loader from "@/app/components/Loader";
+import TextDivider from "@/app/components/TextDivider";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 
@@ -47,51 +48,62 @@ export default function Photos() {
 	const [loaded, setLoaded] = useState(false);
 	let counter = 0;
 	return (
-		<div className="flex flex-col items-center w-full ">
-			{/* <h1 className="text-5xl my-5 font-roseritta border-b-2 border-black w-fit ">Our Memories</h1> */}
-
-			<div style={{ display: !loaded ? "flex" : "none" }} className="w-full justify-center mt-20">
-				<Loader />
-			</div>
-			<div
-				className="columns-2 md:columns-4 gap-3 px-3 space-y-3 mb-20 "
-				style={{ visibility: loaded ? "visible" : "hidden" }}
-			>
-				{galleryImages.map((image, index) => (
-					<Image
-						onLoad={(e) => {
-							counter++;
-							if (counter === galleryImages.length) {
-								setLoaded(true);
-							}
-						}}
-						key={index}
-						width={400}
-						height={300}
-						src={image}
-						alt={`gallery-${index}`}
-						className="w-full rounded-md shadow-picture cursor-pointer"
-						onClick={(e) => {
-							const imageSrc = e.currentTarget.getAttribute("src");
-							setSelectedImage(imageSrc);
-						}}
-					/>
-				))}
+		<div
+			className="w-full flex flex-col items-center font-lora px-3 mb-5 text-md"
+			style={{ boxShadow: "0 3px 3px #00000033 inset" }}
+		>
+			<div className="flex flex-col items-center w-full ">
+				<h1 className="text-5xl mt-5 text-center font-roseritta">Wedding Memories</h1>
+				<div className="w-full text-center mt-5">
+					Over the course of the wedding week, guests will be able to upload/download photos here
+				</div>
+				<TextDivider className={"mb-5 mt-20"} />
+				<h1 className="text-5xl text-center font-roseritta">Our Memories</h1>
+				<div style={{ display: !loaded ? "flex" : "none" }} className="w-full justify-center mt-20">
+					<Loader />
+				</div>
 				<div
-					style={{ display: selectedImage ? "flex" : "none" }}
-					className="w-full h-[100%] fixed z-50 -top-3 left-0 bg-[#000000aa] justify-center items-center"
-					onClick={() => {
-						setSelectedImage(null);
-					}}
+					className="columns-2 md:columns-4 gap-3 px-3 space-y-3 mb-20 mt-5"
+					style={{ visibility: loaded ? "visible" : "hidden" }}
 				>
-					{selectedImage && (
+					{galleryImages.map((image, index) => (
 						<Image
-							key={"selected-image"}
-							src={selectedImage}
-							alt="selected-image"
-							className="w-auto h-fit px-2 rounded-xl cursor-pointer md:max-w-[800px] max-h-[500px] md:max-h-[600px]"
+							onLoad={(e) => {
+								counter++;
+								if (counter === galleryImages.length) {
+									setLoaded(true);
+								}
+							}}
+							key={index}
+							width={400}
+							height={300}
+							src={image}
+							alt={`gallery-${index}`}
+							className="w-full rounded-md shadow-picture cursor-pointer"
+							onClick={(e) => {
+								const imageSrc = e.currentTarget.getAttribute("src");
+								setSelectedImage(imageSrc);
+							}}
 						/>
-					)}
+					))}
+					<div
+						style={{ display: selectedImage ? "flex" : "none" }}
+						className="w-full h-[100%] fixed z-50 -top-3 left-0 bg-[#000000aa] justify-center items-center"
+						onClick={() => {
+							setSelectedImage(null);
+						}}
+					>
+						{selectedImage && (
+							<Image
+								key={"selected-image"}
+								src={selectedImage}
+								alt="selected-image"
+								width={600}
+								height={800}
+								className="w-auto h-fit px-2 rounded-xl cursor-pointer md:max-w-[800px] max-h-[500px] md:max-h-[600px]"
+							/>
+						)}
+					</div>
 				</div>
 			</div>
 		</div>
