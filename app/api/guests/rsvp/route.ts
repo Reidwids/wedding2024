@@ -23,6 +23,9 @@ export async function PUT(req: NextRequest) {
 				email: {
 					in: guests.map((guest) => guest.email),
 				},
+				name: {
+					in: guests.map((guest) => guest.name),
+				},
 			},
 		});
 
@@ -40,7 +43,10 @@ export async function PUT(req: NextRequest) {
 		for (const guest of guests) {
 			await prisma.guest.update({
 				where: {
-					email: guest.email,
+					email_name: {
+						email: guest.email,
+						name: guest.name,
+					},
 				},
 				data: {
 					rsvp: guest.rsvp,

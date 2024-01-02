@@ -1,5 +1,6 @@
 import prisma from "@/app/lib/prisma";
 import { isValidBody } from "@/app/utils/utils";
+import { Guest } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
 export type CreateGroupReq = {
@@ -23,11 +24,16 @@ export async function POST(req: NextRequest) {
 				email: {
 					in: group.map((guest) => guest.email),
 				},
+				name: {
+					in: group.map((guest) => guest.name),
+				},
 			},
 		});
 
 		if (guestsExist.length) {
-			return new NextResponse(JSON.stringify({ message: `Guest already exist` }), { status: 400 });
+			return new NextResponse(JSON.stringify({ message: `Guests already exists - ${guestsExist.map((g) => g.name)}` }), {
+				status: 400,
+			});
 		}
 
 		try {
