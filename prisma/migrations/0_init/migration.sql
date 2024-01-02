@@ -19,3 +19,4 @@ CREATE UNIQUE INDEX "Guest_email_key" ON "Guest"("email");
 
 -- AddForeignKey
 ALTER TABLE "Guest" ADD CONSTRAINT "Guest_groupId_fkey" FOREIGN KEY ("groupId") REFERENCES "Group"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
