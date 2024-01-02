@@ -1,4 +1,3 @@
-import TextDivider from "@/app/components/TextDivider";
 import React from "react";
 
 export default function Events() {

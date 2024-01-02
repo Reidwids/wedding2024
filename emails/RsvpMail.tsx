@@ -43,7 +43,7 @@ export default function rsvpMail({ guests }: Props) {
 					<Container
 						className="w-full min-w-full"
 						style={{
-							backgroundColor: "#98A28F",
+							backgroundColor: "#CED7C2",
 							backgroundSize: "cover",
 							fontFamily: "Roboto, geneva, sans-serif",
 							padding: "20px",
