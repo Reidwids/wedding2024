@@ -6,15 +6,38 @@ import React, { useEffect, useState } from "react";
 export default function Admin() {
 	const [guests, setGuests] = useState<Guest[]>([]);
 	const [isLoading, setLoading] = useState(true);
+	const [password, setPassword] = useState("");
+	const [passwordValidated, setPasswordValidated] = useState(false);
+	const [error, setError] = useState("");
+
+	const resolvePassword = async () => {
+		fetch("/api/admin/password", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ password }),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.validated) {
+					setPasswordValidated(true);
+				} else {
+					setError("Incorrect Password");
+				}
+			});
+	};
 
 	useEffect(() => {
-		fetch("/api/guests/all")
-			.then((res) => res.json())
-			.then((data: Guest[]) => {
-				setGuests(data);
-				setLoading(false);
-			});
-	}, []);
+		if (passwordValidated) {
+			fetch("/api/guests/all")
+				.then((res) => res.json())
+				.then((data: Guest[]) => {
+					setGuests(data);
+					setLoading(false);
+				});
+		}
+	}, [passwordValidated]);
 
 	return (
 		<div
@@ -23,7 +46,32 @@ export default function Admin() {
 		>
 			<div className=" text-5xl mt-5 text-center font-roseritta">Admin Panel</div>
 			<div className=" mt-5 flex justify-center w-full">
-				{isLoading ? (
+				{!passwordValidated ? (
+					<div className="mt-3 flex flex-col items-center">
+						<div>
+							<input
+								type="text"
+								className="border border-[#ddd] rounded-sm px-3 py-2 w-full text-center text-lg"
+								placeholder="Email"
+								onChange={(e) => setPassword(e.target.value)}
+								onKeyDown={(e) => {
+									if (e.key === "Enter") {
+										resolvePassword();
+									}
+								}}
+							/>
+						</div>
+						<div className="mt-4">
+							<button
+								className="bg-[#000] text-[#fff] rounded-sm px-4 py-1 flex flex-row items-center"
+								onClick={resolvePassword}
+							>
+								Submit
+							</button>
+						</div>
+						{error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+					</div>
+				) : isLoading ? (
 					<Loader />
 				) : (
 					<table className="table-auto w-full max-w-3xl ">
@@ -39,7 +87,7 @@ export default function Admin() {
 								.sort((a, b) => (a.rsvp === b.rsvp ? 0 : a.rsvp && !b.rsvp ? -1 : 1))
 								.map((guest, i) => {
 									return (
-										<tr className={i % 2 ? "bg-[#eee]" : "#fff"}>
+										<tr className={i % 2 ? "bg-[#eee]" : "#fff"} key={i}>
 											<td className="text-md">{guest.name}</td>
 											<td className="text-xs">
 												{guest.rsvp ? "Confirmed" : !guest.rsvp && guest.rspvDate ? "Decline" : "Pending..."}
