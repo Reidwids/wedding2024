@@ -52,6 +52,10 @@ export default function Travel() {
 						When booking, you have two options. You can book your flight and resort together through a vacation package
 						provider such as Sunwing, or you can book the flight and resort separately.
 					</p>
+					<p className="text-md text-red-600 mt-5">
+						*Note that we advise waiting to book your reservation until later in the year. Prices are high right now, and
+						will most likely come down as the year progresses.
+					</p>
 					<div className="mt-5">
 						<h3 className="text-xl font-[500]">Seperate</h3>
 						<div className="text-md mt-2">
