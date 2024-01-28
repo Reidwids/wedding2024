@@ -2,7 +2,7 @@
 import Loader from "@/app/components/Loader";
 import { Guest } from "@prisma/client";
 import React, { useEffect, useState } from "react";
-
+// test commit
 export default function Admin() {
 	const [guests, setGuests] = useState<Guest[]>([]);
 	const [isLoading, setLoading] = useState(true);
