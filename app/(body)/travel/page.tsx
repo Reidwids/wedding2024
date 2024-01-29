@@ -50,7 +50,7 @@ export default function Travel() {
 					<h3 className="text-2xl font-[500]">Booking Information</h3>
 					<p className="text-md mt-2">
 						When booking, you have two options. You can book your flight and resort together through a vacation package
-						provider such as Sunwing, or you can book the flight and resort separately.
+						provider such as Sunwing or AirTransat, or you can book the flight and resort separately.
 					</p>
 					<p className="text-md text-red-600 mt-5">
 						*Note that we advise waiting to book your reservation until later in the year. Prices are high right now, and
@@ -110,6 +110,14 @@ export default function Travel() {
 										target="_blank"
 									>
 										Sunwing
+									</a>{" "}
+									or{" "}
+									<a
+										className="underline"
+										href="https://www.transat.com/en-CA/hotels/iberostar-paraiso-beach?date=2024-11-20"
+										target="_blank"
+									>
+										Air Transat
 									</a>
 									!
 								</li>
