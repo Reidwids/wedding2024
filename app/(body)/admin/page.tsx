@@ -77,6 +77,7 @@ export default function Admin() {
 					<table className="table-auto w-full max-w-3xl ">
 						<thead>
 							<tr className="text-md font-semibold border-b-2">
+								<td>#</td>
 								<td>Name</td>
 								<td>RSVP Status</td>
 								<td>RSVP Date</td>
@@ -84,10 +85,18 @@ export default function Admin() {
 						</thead>
 						<tbody>
 							{guests
+								.sort((a, b) =>
+									a.rspvDate === b.rspvDate && !a.rspvDate && !b.rspvDate
+										? 0
+										: !a.rspvDate || a.rspvDate < b.rspvDate!
+										? 1
+										: -1
+								)
 								.sort((a, b) => (a.rsvp === b.rsvp ? 0 : a.rsvp && !b.rsvp ? -1 : 1))
 								.map((guest, i) => {
 									return (
 										<tr className={i % 2 ? "bg-[#eee]" : "#fff"} key={i}>
+											<td className="text-sm">{i}</td>
 											<td className="text-md">{guest.name}</td>
 											<td className="text-xs">
 												{guest.rsvp ? "Confirmed" : !guest.rsvp && guest.rspvDate ? "Decline" : "Pending..."}
