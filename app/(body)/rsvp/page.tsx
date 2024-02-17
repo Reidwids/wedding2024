@@ -196,7 +196,11 @@ export default function RSVP() {
 								<div className="font-parisienne text-3xl mt-3">Thank you</div>
 								<p className="mt-2">We're so glad you'll be joining us.</p>
 								<p>We can't wait to celebrate with you in paradise!</p>
-								<Image alt="Palm Trees" src="/palmTrees.svg" className="w-16 mt-2" width={16} height={16} />
+								{email.toLowerCase() === "sidbhalla@hotmail.com" ? (
+									<Image alt="Sid" src="/sid.jpg" className="w-32 mt-2" width={300} height={300} />
+								) : (
+									<Image alt="Palm Trees" src="/palmTrees.svg" className="w-16 mt-2" width={16} height={16} />
+								)}
 							</div>
 						</div>
 						<div className="flex justify-center items-center absolute bottom-6">
