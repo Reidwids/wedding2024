@@ -21,7 +21,7 @@ export async function PUT(req: NextRequest) {
 		const reqGuests = await prisma.guest.findMany({
 			where: {
 				email: {
-					in: guests.map((guest) => guest.email),
+					in: guests.map((guest) => guest.email.toLowerCase()),
 				},
 				name: {
 					in: guests.map((guest) => guest.name),

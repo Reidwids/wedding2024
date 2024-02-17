@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
 		const guestsExist = await prisma.guest.findMany({
 			where: {
 				email: {
-					in: group.map((guest) => guest.email),
+					in: group.map((guest) => guest.email.toLowerCase()),
 				},
 				name: {
 					in: group.map((guest) => guest.name),

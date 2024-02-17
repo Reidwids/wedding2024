@@ -17,7 +17,7 @@ export default function RSVP() {
 		setIsLoading(true);
 		setError("");
 
-		const JSONdata = JSON.stringify({ email: email });
+		const JSONdata = JSON.stringify({ email: email.toLowerCase() });
 
 		const options = {
 			method: "POST",
