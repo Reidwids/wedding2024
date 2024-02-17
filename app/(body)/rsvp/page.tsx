@@ -165,7 +165,7 @@ export default function RSVP() {
 													onChange={(e) => handleRadioChange(e, guest)}
 												/>
 											</td>
-											<td className="py-2 pr-5 font-parisienne">{guest.name}</td>
+											<td className="py-2 pr-5 font-parisienne text-left">{guest.name}</td>
 										</tr>
 									))}
 								</tbody>
