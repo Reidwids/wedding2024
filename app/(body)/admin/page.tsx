@@ -96,7 +96,7 @@ export default function Admin() {
 								.map((guest, i) => {
 									return (
 										<tr className={i % 2 ? "bg-[#eee]" : "#fff"} key={i}>
-											<td className="text-sm">{i}</td>
+											<td className="text-sm">{i + 1}</td>
 											<td className="text-md">{guest.name}</td>
 											<td className="text-xs">
 												{guest.rsvp ? "Confirmed" : !guest.rsvp && guest.rspvDate ? "Decline" : "Pending..."}
