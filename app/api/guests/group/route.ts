@@ -17,13 +17,12 @@ export async function POST(req: NextRequest) {
 		return new NextResponse(JSON.stringify({ name: "Invalid body" }), { status: 400 });
 	}
 	const { email }: GetGuestsReq = await req.json();
-
 	try {
 		const group = await prisma.group.findFirst({
 			where: {
 				guests: {
 					some: {
-						email: email,
+						email: email.toLowerCase(),
 					},
 				},
 			},
@@ -31,12 +30,13 @@ export async function POST(req: NextRequest) {
 				guests: true,
 			},
 		});
+
 		if (group) {
 			return new NextResponse(JSON.stringify(group), { status: 200 });
 		} else {
 			const guest = await prisma.guest.findFirst({
 				where: {
-					email: email,
+					email: email.toLowerCase(),
 				},
 			});
 			if (guest) {

@@ -28,7 +28,6 @@ export async function PUT(req: NextRequest) {
 				},
 			},
 		});
-
 		// Make sure all emails exist
 		if (reqGuests.length !== guests.length) {
 			return new NextResponse(JSON.stringify({ message: "Provided guest does not exist" }), { status: 400 });

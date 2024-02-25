@@ -26,7 +26,6 @@ export default function RSVP() {
 			},
 			body: JSONdata,
 		};
-
 		const response = await fetch("/api/guests/group", options);
 		if (response.status === 200) {
 			const res = await response.json();
