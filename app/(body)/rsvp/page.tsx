@@ -86,7 +86,7 @@ export default function RSVP() {
 		>
 			<div className="w-full max-w-[600px] flex flex-col relative h-[350px] shadow-card items-center text-center px-2 mx-2 overflow-hidden bg-[#ffffffee] rounded-lg ">
 				<div className="font-roseritta text-5xl md:text-5xl border-b-2 w-full py-2.5 ">R . S . V . P</div>
-				{new Date() < new Date("2024-03-01") ? (
+				{new Date() < new Date("2024-03-15") ? (
 					<>
 						<div
 							className={"flex flex-col items-center absolute mt-8 md:mt-12 transition-all w-[80%]"}
