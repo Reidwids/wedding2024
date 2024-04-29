@@ -9,7 +9,7 @@ export default function FAQ() {
 			style={{ boxShadow: "0 3px 3px #00000033 inset" }}
 		>
 			<div className="text-5xl mt-5 text-center font-roseritta">FAQ</div>
-			<ul className="list-disc list-outside mt-5 max-w-3xl bg-white">
+			<ul className="list-disc list-outside mt-5 mx-3 max-w-3xl bg-white">
 				<li className="my-4">
 					<span className="text-xl font-semibold">Should we bring a gift?</span>
 					<br />
@@ -29,6 +29,18 @@ export default function FAQ() {
 					<span className="">#TsangReidasOnTheBeach</span>
 				</li>
 			</ul>
+			<div>
+				<TextDivider />
+			</div>
+			<div className="text-4xl mt-5 text-center font-roseritta">Resort Map</div>
+
+			<Image
+				src="/map-IberostarParaiso-RivieraMaya.jpg"
+				alt="resort map"
+				width={1200}
+				height={1600}
+				className="mt-10 max-w-3xl w-full mx-5"
+			/>
 		</div>
 	);
 }
