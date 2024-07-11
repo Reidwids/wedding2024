@@ -23,10 +23,10 @@ export default function Travel() {
 				<div className="mt-5">
 					<h3 className="text-2xl font-[500]">Location</h3>
 					<p className="text-md mt-2">
-						The wedding will be held at Iberostar Paraiso Beach Resort in Riviera Maya. Paraiso Beach is located on the Playa
-						Paraíso complex grounds, which includes a total of 5 Iberostar All-Inclusive resorts. Remember when booking that
-						to attend the wedding you must be staying specifically at Iberostar Paraiso Beach! (Not Del Mar, Lindo, Maya, or
-						Grand)
+						The wedding will be held at Iberostar Paraiso Beach Resort (Also known as "Iberostar Waves Paraiso Beach") in
+						Riviera Maya. Paraiso Beach is located on the Playa Paraíso complex grounds, which includes a total of 5
+						Iberostar All-Inclusive resorts. Remember when booking that to attend the wedding you must be staying
+						specifically at Iberostar Paraiso Beach! (Not Del Mar, Lindo, Maya, or Grand)
 					</p>
 				</div>
 
