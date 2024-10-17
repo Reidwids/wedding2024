@@ -20,11 +20,11 @@ export default function Header() {
 			href: "/travel",
 			active: true,
 		},
-		{
-			name: "RSVP",
-			href: "/rsvp",
-			active: true,
-		},
+		// {
+		// 	name: "RSVP",
+		// 	href: "/rsvp",
+		// 	active: true,
+		// },
 		{
 			name: "Dress Code",
 			href: "/dress-code",
