@@ -2,6 +2,13 @@ import React from "react";
 import Image from "next/image";
 
 export default function DressCode() {
+	const mensPhotos = [
+		"/dress-code/suit1.webp",
+		"/dress-code/suit2.webp",
+		"/dress-code/suit3.webp",
+		"/dress-code/suit4.webp",
+	];
+
 	return (
 		<div
 			className="w-full flex flex-col items-center font-lora px-3 mb-5 text-md"
@@ -32,6 +39,16 @@ export default function DressCode() {
 						))}
 					</div>
 				</div>
+				<div className="flex flex-col items-center">
+					<h1 className="text-3xl mt-5 text-center font-roseritta">Women</h1>
+					<div>
+						A formal evening dress, a dressy cocktail dress, or a chic pantsuit in a light neutral color such as any shade of
+						nude, sandy beige, or grey tones, champagne, sage, or silver and gold are all encouraged. If you don't feel
+						comfortable in a color, black is also acceptable. We kindly request that you avoid patterns to maintain a
+						cohesive and elegant atmosphere.
+					</div>
+					<Image src={"/dresses.png"} alt="Womens Dresses" width={300} height={400} className="px-5 py-5 max-w-lg w-full" />
+				</div>
 				<div>
 					<h1 className="text-3xl mt-5 text-center font-roseritta">Men</h1>
 					<div>
@@ -41,23 +58,11 @@ export default function DressCode() {
 						well as pocket squares, suspenders, ties, bowties, and/or any other accessories. We kindly request that you avoid
 						patterns to maintain a cohesive and elegant aesthetic.
 					</div>
-				</div>
-				<div className="flex flex-col items-center">
-					<h1 className="text-3xl mt-5 text-center font-roseritta">Women</h1>
-					<div>
-						A formal evening dress, a dressy cocktail dress, or a chic pantsuit in a light neutral color such as any shade of
-						nude, sandy beige, or grey tones, champagnes, silvers and golds are encouraged. If you don't feel comfortable in
-						a color, black is also acceptable. We kindly request that you avoid patterns to maintain a cohesive and elegant
-						atmosphere.
+					<div className="flex flex-wrap justify-center">
+						{mensPhotos.map((img) => (
+							<Image src={img} alt="Mens Suit" width={250} height={250} className="px-2 py-5 max-w-xl" />
+						))}
 					</div>
-					<Image
-						key={"selected-image"}
-						src={"/dresses.png"}
-						alt="Womens Dresses"
-						width={300}
-						height={400}
-						className="px-5 py-5 max-w-lg w-full"
-					/>
 				</div>
 			</div>
 		</div>
