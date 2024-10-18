@@ -40,7 +40,7 @@ export default function FAQ() {
 						<span>
 							{item.a}
 							{item.link && (
-								<a href={item.link} className="underline">
+								<a href={item.link} className="underline" target="_blank">
 									{" "}
 									clicking here!
 								</a>
