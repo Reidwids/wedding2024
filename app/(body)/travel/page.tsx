@@ -10,7 +10,7 @@ export default function Travel() {
 		>
 			<h1 className="text-5xl mt-5 text-center font-roseritta">Travel Information</h1>
 			<h1 className="text-xl mt-1 font-lora">Booking your journey</h1>
-			<Image alt="Text Divider" src="/plane-trail2.svg" className="-rotate-[27deg] -mt-10 ml-16 " width={200} height={200} />
+			<Image alt="Plane Trail" src="/plane-trail2.svg" className="-rotate-[27deg] -mt-10 ml-16 " width={200} height={200} />
 			<div className="mt-5 max-w-3xl bg-white ">
 				<div className="">
 					<h3 className="text-2xl font-[500]">Overview</h3>
