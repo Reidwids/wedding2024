@@ -54,10 +54,22 @@ export default function Photos() {
 		>
 			<div className="flex flex-col items-center w-full ">
 				<h1 className="text-5xl mt-5 text-center font-roseritta">Wedding Memories</h1>
-				<div className="w-full text-center mt-5">
-					Over the course of the wedding week, guests will be able to upload/download photos here
-				</div>
-				<TextDivider className={"mb-5 mt-20"} />
+				<p className="max-w-2xl mt-5 text-center">
+					If you'd like to share any photos with us that you've collected throughout the trip, or see photos that others have
+					uploaded - please click below!
+				</p>
+				<a
+					href="https://drive.google.com/drive/folders/1OgD28HUr6Dqq8Af7RI_TGco-SPUDo7En?usp=sharing"
+					target="_blank"
+					className="w-40 h-12 border-black border-[2px] will-change-transform rounded-md flex items-center p-2 mt-10 mb-16"
+				>
+					<Image alt="Google Drive Upload" src="/googleDrive.svg" width={40} height={40} className="cursor-pointer" />
+					<div className="flex flex-col">
+						<div className="ml-2 -mb-1 text-xs font-semibold">Upload to</div>
+						<div className="ml-2 text-[15px] font-bold">Google Drive</div>
+					</div>
+				</a>
+				<TextDivider className={"mb-5"} />
 				<h1 className="text-5xl text-center font-roseritta">Our Memories</h1>
 				<div style={{ display: !loaded ? "flex" : "none" }} className="w-full justify-center mt-20">
 					<Loader />
