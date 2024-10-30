@@ -65,14 +65,15 @@ export default function FAQ() {
 				))}
 			</ul>
 
-			<div className="text-4xl mt-10 text-center font-roseritta">Items to Remember</div>
+			<div className="text-4xl mt-12 md:mt-10 text-center font-roseritta">Items to Remember</div>
 			<p className="max-w-2xl mt-5 text-center">Just a friendly reminder - some of the items below are easy to forget!</p>
 			<ol className="list-disc mt-5">
 				{items.map((i) => (
 					<li>{i}</li>
 				))}
 			</ol>
-			<div className="text-4xl mt-10 text-center font-roseritta">Resort Map</div>
+			<TextDivider className={"mt-20"} />
+			<div className="text-4xl mt-5 text-center font-roseritta">Resort Map</div>
 			<Image
 				src="/map-IberostarParaiso-RivieraMaya.jpg"
 				alt="resort map"

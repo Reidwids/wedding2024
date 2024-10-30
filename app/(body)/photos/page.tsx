@@ -66,7 +66,7 @@ export default function Photos() {
 					<Image alt="Google Drive Upload" src="/googleDrive.svg" width={40} height={40} className="cursor-pointer" />
 					<div className="flex flex-col">
 						<div className="ml-2 -mb-1 text-xs font-semibold">Upload to</div>
-						<div className="ml-2 text-[15px] font-bold">Google Drive</div>
+						<div className="ml-2 text-[15px] font-bold whitespace-nowrap">Google Drive</div>
 					</div>
 				</a>
 				<TextDivider className={"mb-5"} />
