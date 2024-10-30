@@ -26,6 +26,18 @@ export default function FAQ() {
 			a: "#TsangReidasOnTheBeach",
 		},
 	];
+	const items = [
+		"Sunscreen",
+		"Hat",
+		"Sunglasses",
+		"Bug repellant",
+		"Immodium / Pepto",
+		"Water shoes",
+		"Comfortable running shoes (excursion)",
+		"Reusable tumblr",
+		"USD cash",
+	];
+
 	return (
 		<div
 			className="w-full flex flex-col items-center font-lora px-3 mb-5 text-md"
@@ -43,7 +55,7 @@ export default function FAQ() {
 						<span>
 							{item.a}
 							{item.link && (
-								<a href={item.link} className="underline" target="_blank">
+								<a href={item.link} className="underline opacity-70" target="_blank">
 									{" "}
 									clicking here!
 								</a>
@@ -52,21 +64,15 @@ export default function FAQ() {
 					</li>
 				))}
 			</ul>
-			<div className="text-4xl mt-20 text-center font-roseritta">Iberostar App</div>
-			<p className="max-w-2xl mt-5 text-center">
-				Download the <strong>Iberostar app</strong>! You can log in with your room number and book restaurants - amongst
-				other things like event information, maps, and restaurant menus.
-			</p>
-			<div className="flex justify-center gap-5 mt-10 mb-28 md:mb-20">
-				<a href="https://play.google.com/store/apps/details?id=com.mo2o.iberostar&pcampaignid=web_share" target="_blank">
-					<Image alt="Google Play Download" src="/playStoreButton.svg" width={150} height={150} className="cursor-pointer" />
-				</a>
-				<a href="https://apps.apple.com/us/app/iberostar-hotels-resort/id922530529" target="_blank">
-					<Image alt="App Store Download" src="/appStoreButton.svg" width={150} height={150} className="cursor-pointer" />
-				</a>
-			</div>
-			<TextDivider />
-			<div className="text-4xl mt-5 text-center font-roseritta">Resort Map</div>
+
+			<div className="text-4xl mt-10 text-center font-roseritta">Items to Remember</div>
+			<p className="max-w-2xl mt-5 text-center">Just a friendly reminder - some of the items below are easy to forget!</p>
+			<ol className="list-disc mt-5">
+				{items.map((i) => (
+					<li>{i}</li>
+				))}
+			</ol>
+			<div className="text-4xl mt-10 text-center font-roseritta">Resort Map</div>
 			<Image
 				src="/map-IberostarParaiso-RivieraMaya.jpg"
 				alt="resort map"
