@@ -69,13 +69,16 @@ export default function FAQ() {
 			<p className="max-w-2xl mt-5 text-center">Just a friendly reminder - some of the items below are easy to forget!</p>
 			<ol className="list-disc mt-5">
 				{items.map((i) => (
-					<li>{i}</li>
+					<li key={i}>{i}</li>
 				))}
 			</ol>
 			<TextDivider className={"mt-20"} />
 			<div className="text-4xl mt-5 text-center font-roseritta">Resort Map</div>
+			<p className="max-w-2xl mt-5 text-center">
+				Find the locations of the ceremony and reception below - amongst other resort amenities.
+			</p>
 			<Image
-				src="/map-IberostarParaiso-RivieraMaya.jpg"
+				src="/map-IberostarParaiso-RivieraMaya.png"
 				alt="resort map"
 				width={1200}
 				height={1600}
