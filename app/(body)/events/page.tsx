@@ -14,13 +14,22 @@ export default function Events() {
 				to ensure you're not missing any updates!
 			</div>
 			<Image
-				src="/itinerary.png"
-				alt="Wedding Itinerary"
+				src="/weekItinerary.png"
+				alt="Wedding Day Itinerary"
 				width={1200}
 				height={1600}
 				className="my-10 max-w-2xl w-full rounded-lg shadow-xl"
 			/>
-			<TextDivider />
+			<TextDivider className="mt-5" />
+			<div className=" text-5xl mt-10 text-center font-roseritta">Ceremony</div>
+			<Image
+				src="/weddingItinerary.png"
+				alt="Ceremony Itinerary"
+				width={1200}
+				height={1600}
+				className="my-10 max-w-md w-full rounded-lg shadow-xl"
+			/>
+			<TextDivider className="mt-5" />
 			<div className="text-4xl mt-8 text-center font-roseritta">Iberostar App</div>
 			<p className="max-w-2xl mt-5 text-center">
 				Download the <strong>Iberostar app</strong>! You can log in with your room number and book restaurants - amongst
