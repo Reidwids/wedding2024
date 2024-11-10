@@ -6,7 +6,7 @@ import { useCountdown } from "./useCountdown";
 const ExpiredNotice = () => {
 	return (
 		<div>
-			<span>We Are Married!!!</span>
+			<span className="text-3xl mb-7 flex flex-row justify-around">We're Married!!!</span>
 		</div>
 	);
 };
@@ -28,7 +28,7 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
 };
 
 const CountdownTimer = () => {
-	const targetDate = new Date("2024-11-23T16:30:00.000Z");
+	const targetDate = new Date("2024-11-23T22:00:00.000Z");
 	const [hydrated, setHydrated] = useState(false);
 
 	const [days, hours, minutes, seconds] = useCountdown(targetDate);
